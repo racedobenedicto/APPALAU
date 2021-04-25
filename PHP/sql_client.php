@@ -29,7 +29,7 @@ function generar_push($idAlumne, $materia, $idUser, $ip_server_v2, $server_user_
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json; charset=utf-8',
-        'Authorization: Basic NDA2NTA5NDQtYWYzZC00ZTJhLWIwNGYtN2EwNDM5ZDdhNmIw'
+        'Authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     ));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
@@ -76,25 +76,10 @@ function enviar_consulta($sql, $ip_server_v2, $server_user_v2, $pass_v2, $bbdd_v
 		$info=$mysql->executeQuery($sql, &$return );
 			if($return==1)
 			{
-				/*$ret['fields']=$info['fields'];
-				$ret['state']=$info['state'];
-				$nRows=0;
-				while($nRows<$info['num_rows'])
-				{
-					$nCol=0;
-					foreach($info['fields'] as $field)
-					{
-						$data[$nRows][$nCol]=$info['data'][$nRows][$field];
-						$nCol++;
-					}
-					$nRows++;
-				}
-				$ret['data']=$data;	
-				*/
+
 				$ret=$info;
 			}else{
 				$ret['state']="Fail";
-	//			print_r($info);
 				if($info['state']=="SQL") $ret['message']="Error, No data send.";
 				if($info['state']=="BBDD") $ret['message']="Error, could not connect.";
 			}		
@@ -106,6 +91,5 @@ function enviar_consulta($sql, $ip_server_v2, $server_user_v2, $pass_v2, $bbdd_v
 	
 	return $ret;
 }
-//echo json_encode($ret);
-//Salida de la consulta en ret
+
 ?>
