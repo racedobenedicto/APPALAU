@@ -1,0 +1,45 @@
+<app-header-edit></app-header-edit>
+
+<ion-content>
+  <form #form="ngForm" (ngSubmit)="acceptChanges( form )">
+
+    <ion-item>
+      <ion-label>Direcció:</ion-label>
+      <ion-input type="text" placeholder="{{ user.direccio }}" name="address" [(ngModel)]="users.address"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Municipi:</ion-label>
+      <ion-input type="text" placeholder="{{ user.municipi }}" name="village" [(ngModel)]="users.village"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Codi Postal:</ion-label>
+      <ion-input type="text" placeholder="{{ user.codi_postal }}" name="postalCode" [(ngModel)]="users.postalCode" pattern="^(?:0[1-9]\d{3}|[1-4]\d{4}|5[0-2]\d{3})$"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Usuari - user:</ion-label>
+      <ion-input type="text" placeholder="{{ user2.usuari }}" name="user" [(ngModel)]="users.user1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Usuari - telf:</ion-label>
+      <ion-input type="tel" placeholder="{{ user2.tlf }}" name="phone" [(ngModel)]="users.phone1" pattern="\d{9}"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Usuari - email:</ion-label>
+      <ion-input type="email" placeholder="{{ user2.email }}" name="email" [(ngModel)]="users.email1" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"></ion-input>
+    </ion-item>
+    
+ </form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+      <ion-button [disabled]="form.invalid" type="sumbit" expand="block" (click)="acceptChanges( form )">
+        Acceptar Canvis
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>

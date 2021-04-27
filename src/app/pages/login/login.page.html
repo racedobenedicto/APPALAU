@@ -1,0 +1,29 @@
+<app-header-login></app-header-login>
+
+<ion-content class="ion-padding" color="secondary">
+  <ion-item class="ion-padding" color="secondary">
+    <img src="/assets/general.jpg" width="200" class="image">
+  </ion-item>
+  
+  <form #form="ngForm" (ngSubmit)="login( form )">
+
+    <ion-item color="secondary">
+      <ion-label>Usuari:</ion-label>
+      <ion-input type="text" placeholder="usuari" name="user" [(ngModel)]="user.user" required></ion-input>
+    </ion-item>
+
+    <ion-item color="secondary">
+      <ion-label>Contrasenya:</ion-label>
+      <ion-input type="password" placeholder="password" name="password" [(ngModel)]="user.password" required></ion-input>
+    </ion-item>
+
+    <ion-button [disabled]="form.invalid" type="sumbit" expand="block">
+      Login
+    </ion-button>
+
+ </form>
+
+  <ion-label color="danger">{{ error }}</ion-label>
+</ion-content>
+
+<app-footer></app-footer>

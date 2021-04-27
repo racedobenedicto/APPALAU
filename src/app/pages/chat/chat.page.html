@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+          <ion-button (click)="closeChat()" fill="clear" shape="round">
+              <ion-icon slot="icon-only" name="arrow-back"></ion-icon>
+          </ion-button>
+      </ion-buttons>
+
+      <ion-avatar slot="start">
+          <img [src]="images[subject.materia]" />
+        </ion-avatar>
+        
+      <ion-title >{{ subject.materia }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content scrollDownOnLoad="true" #content> 
+  <app-message [messages]="messages" [colors]="colors"></app-message>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+      <form #form="ngForm" (ngSubmit)="send( subject.materia, form )">
+          <ion-input type="text" placeholder="Escriu un missatge" name="message" [(ngModel)]="message"></ion-input>
+      </form>
+      <ion-button slot="end" color="light" (click)="send( subject.materia, form )" fill="clear" shape="round">
+          <ion-icon slot="icon-only" name="send" color="light"></ion-icon>
+      </ion-button>
+  </ion-toolbar>
+</ion-footer>

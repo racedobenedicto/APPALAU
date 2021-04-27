@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-segment scrollable color="primary" value="absencies" (ionChange)="changeFile( $event )">
+          <ion-segment-button mode="md" *ngFor="let category of categories" [value]="category">
+            <ion-label text-capitalize>{{ nomCategories[category] }}</ion-label>
+          </ion-segment-button>
+        </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <app-absences *ngIf="category==='absencies'" [fileAbsences]="file"></app-absences> 
+  <app-comments *ngIf="category==='observaciones'" [fileComments]="file"></app-comments>
+  <app-incidents *ngIf="category==='incidencias'" [fileIncidents]="file"></app-incidents>
+</ion-content>
+
+<app-footer></app-footer>

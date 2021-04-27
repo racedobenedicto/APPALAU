@@ -1,0 +1,19 @@
+<ion-card color="ligth" mode="ios" *ngFor="let document of documents">
+  <ion-card-header>
+    <ion-card-subtitle>
+      <b class="info-data">{{ document.data }}</b>
+    </ion-card-subtitle>
+    <ion-card-title class="info-tema">{{ document.tema }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="info-informacio" [innerHTML]="document.msg"></div>
+    <br>
+    <p>Professor/a: {{ document.professor }}</p>
+    <br>
+    <strong>Data de venciment: </strong>
+    <p>{{ document.venciment }}</p>
+  </ion-card-content>
+</ion-card>
+
+<app-footer></app-footer>
