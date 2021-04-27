@@ -1,0 +1,21 @@
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="8" *ngIf="msg.idUser===global.idUser" push="4">
+      <ion-card class="color0">
+        <ion-card-subtitle class="ion-padding">{{ msg.nomUser }}  {{ msg.data }} - {{ msg.hora }}</ion-card-subtitle>
+        <ion-card-content >
+        <p> {{ msg.msj }} </p> 
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+    <ion-col size="8" *ngIf="msg.idUser!=global.idUser">
+      <ion-card class="color{{msg.color}}">
+        <ion-card-subtitle class="ion-padding">{{ msg.nomUser }}  {{ msg.data }} - {{ msg.hora }}</ion-card-subtitle>
+        <ion-card-content>
+        <p> {{ msg.msj }} </p>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+

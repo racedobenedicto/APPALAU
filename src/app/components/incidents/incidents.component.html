@@ -1,0 +1,11 @@
+<ion-card *ngFor="let i of fileIncidents" class="ion-padding">
+  <ion-card-subtitle class="info-data">{{ i['data'] }}</ion-card-subtitle>
+  <br>
+  <strong class="info-tema">{{ i['tipificacio'] }}</strong>
+  <br>
+  <ion-label>{{ i['profesor'] }}</ion-label>
+
+  <ion-card-content>
+    <div class="info-informacio" [innerHTML]="i.detall"></div>
+  </ion-card-content>
+</ion-card>

@@ -1,0 +1,31 @@
+<ion-content class="ion-padding">
+  <ion-grid fixed>
+      <ion-row class="header">
+          <ion-col size="4"><b>Data</b></ion-col>
+          <ion-col size="1"><b>H1</b></ion-col>
+          <ion-col size="1"><b>H2</b></ion-col>
+          <ion-col size="1"><b>H3</b></ion-col>
+          <ion-col size="1"><b>H4</b></ion-col>
+          <ion-col size="1"><b>H5</b></ion-col>
+          <ion-col size="1"><b>H6</b></ion-col>
+      </ion-row>
+      <ion-row *ngFor="let i of fileAbsences; let n = index" [ngClass]="(n%2==0) ? 'odd' : 'even'" >
+          <ion-col size="4">{{ i['data'] }}</ion-col>
+          <ion-col size="1">{{ i['H1'] }}</ion-col>
+          <ion-col size="1">{{ i['H2'] }}</ion-col>
+          <ion-col size="1">{{ i['H3'] }}</ion-col>
+          <ion-col size="1">{{ i['H4'] }}</ion-col>
+          <ion-col size="1">{{ i['H5'] }}</ion-col>
+          <ion-col size="1">{{ i['H6'] }}</ion-col>
+      </ion-row>
+  </ion-grid>
+
+
+  <ion-toolbar>
+    <ion-buttons slot="end">
+        <ion-button (click)="justify( $event )" expand="block" fill="solid">
+            Justificar
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-content>

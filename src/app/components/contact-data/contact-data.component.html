@@ -1,0 +1,22 @@
+<ion-card mode="ios">
+  <ion-card-header>
+    <ion-card-subtitle>Dades de contacte</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    <ion-grid >
+      <ion-row>
+        <ion-col size="12" size-lg="6">
+          <ion-card *ngFor="let user of users">
+            <ion-card-content>
+              <strong>Nom d'Usuari: </strong><p>{{ user.nomUsuari }}</p>
+              <strong>Usuari: </strong><p>{{ user.usuari }}</p>
+              <strong>Telèfon: </strong><p>{{ user.tlf }}</p>
+              <strong>E-mail: </strong><p>{{ user.email }}</p>
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card-content>
+</ion-card>

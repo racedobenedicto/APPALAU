@@ -1,0 +1,12 @@
+<ion-card color="ligth" mode="ios">
+  <ion-card-header>
+    <ion-card-subtitle>
+      <b class="info-data">{{ info.data }}</b>
+    </ion-card-subtitle>
+    <ion-card-title class="info-tema">{{ info.tema }}</ion-card-title>
+  </ion-card-header>
+
+  <ion-card-content>
+    <div class="info-informacio" [innerHTML]="info.informacio"></div>
+  </ion-card-content>
+</ion-card>
