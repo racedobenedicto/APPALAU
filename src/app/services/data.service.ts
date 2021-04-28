@@ -20,7 +20,7 @@ export class DataService {
   }
 
   getMsg( subject: string, global: GlobalVar ) {
-    return this.runQuery<Msg[]>(`/chats_msj.php?idUser=${ global.idUser }&token=${ global.token }&assignatura=${ subject }`);
+    return this.runQuery<Msg[]>(`/chats_msj.php?idUser=${ global.idUser }&token=${ global.token }&assignatura=${ subject }&tipus=${ tipus }`);
   }
 
   getChatHome( global: GlobalVar ) {
