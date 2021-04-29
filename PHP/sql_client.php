@@ -19,7 +19,7 @@ function generar_push($idAlumne, $materia, $idUser, $ip_server_v2, $server_user_
 		"en" => 'Nou missatge a APPALAU'
 	);
 	$fields = array(
-        'app_id' => "9b3566eb-03b3-4fbc-8212-c1f889bf7d26",
+        'app_id' => "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
         'include_player_ids' => $users,
         'contents' => $content,
         'headings' => $tittle
@@ -29,7 +29,7 @@ function generar_push($idAlumne, $materia, $idUser, $ip_server_v2, $server_user_
     curl_setopt($ch, CURLOPT_URL, "https://onesignal.com/api/v1/notifications");
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json; charset=utf-8',
-        'Authorization: Basic NDA2NTA5NDQtYWYzZC00ZTJhLWIwNGYtN2EwNDM5ZDdhNmIw'
+        'Authorization: Basic XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
     ));
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
     curl_setopt($ch, CURLOPT_HEADER, FALSE);
