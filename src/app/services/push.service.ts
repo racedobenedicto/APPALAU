@@ -12,7 +12,7 @@ export class PushService {
   constructor( private oneSignal: OneSignal, private global: GlobalVar ) { }
 
   configuracionInicial(){
-    this.oneSignal.startInit('9b3566eb-03b3-4fbc-8212-c1f889bf7d26', '882916830504');
+    this.oneSignal.startInit('XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX', 'XXXXXXXXXXXX');
 
     this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.Notification);
 
